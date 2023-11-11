@@ -31,7 +31,7 @@ function startPrompt(){
 
         switch (result.option){
             case 'View Departments':
-                addDepartment();
+                viewDepartments();
                 break;
             case 'View Roles':
                 viewRoles();
@@ -55,5 +55,13 @@ function startPrompt(){
             default:
                 quit();
         }
+    });
+}
+function viewDepartments(){
+    let query = 'SELECT * FROM department';
+    connection.query(query, function(err, res){
+        if (err) throw err;
+        console.table(res);
+        startPrompt();
     });
 }
