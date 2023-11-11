@@ -81,3 +81,20 @@ function viewEmployees(){
         startPrompt();
     });
 }
+function addDepartment(){
+    inquirer
+    .prompt({
+        type: 'input',
+        message: 'Name of Department?',
+        name: 'deptName;'
+    })
+    .then(function(answer){
+        connection.query('INSERT INTO department (name) VALUES (?)', 
+        [answer.deptName], function(err,res){
+            if (err) throw err;
+            console.table(res)
+            startPrompt()
+        })
+    })
+}
+
