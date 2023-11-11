@@ -26,5 +26,34 @@ function startPrompt(){
         message: 'Pick One.....NOW',
         name: 'option'
     })
-    
+    .then(function(result){
+        console.log('You chose: ' + result.option);
+
+        switch (result.option){
+            case 'View Departments':
+                addDepartment();
+                break;
+            case 'View Roles':
+                viewRoles();
+                break;
+            case 'View Employees':
+                viewEmployees();
+                break;
+
+            case 'Add Department':
+                addDepartment();
+                break;
+            case 'Add Role':
+                addRole();
+                break;
+            case 'Add Employee':
+                addEmployee();
+                break;
+            case 'Update Employee Role':
+                updateEmployeeRole();
+                break;
+            default:
+                quit();
+        }
+    });
 }
