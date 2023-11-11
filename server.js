@@ -50,7 +50,7 @@ function startPrompt(){
                 addEmployee();
                 break;
             case 'Update Employee Role':
-                updateEmployeeRole();
+                updateEmployee();
                 break;
             default:
                 quit();
@@ -132,17 +132,17 @@ function addEmployee(){
             type: 'input',
             message: 'First Name?',
             name: 'firstName'
-        }
+        },
         {
             type: 'input',
             message: 'Last Name?',
             name: 'lastName'
-        }
+        },
         {
             type: 'input',
             message: 'Employee role ID #',
             name: 'roleID'
-        }
+        },
         {
             type: 'input',
             message: 'Manager ID or null',
@@ -158,4 +158,26 @@ function addEmployee(){
         });
     });
 }
-
+function updateEmployee(){
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: 'Employee to be updated?',
+            name: 'updateEmp'
+        },
+        {
+            type: 'input',
+            message: 'What do you want to update to?',
+            name: 'updateRole'
+        }
+    ])
+    .then(function(answer){
+        connection.query('UPDATE employee SET role_id=? WHERE first_name=?',
+        [answer.updateRole, answer.updateEmp], function(err,res){
+            if (err) throw err;
+            console.table(res);
+            startPrompt();
+        });
+    });
+}
