@@ -9,3 +9,7 @@ CREATE TABLE employees (
     role_id INTEGER NULL,
     manager_id INTEGER NULL
 );
+CREATE TABLE department (
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NULL
+);
