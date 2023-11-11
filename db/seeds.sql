@@ -16,3 +16,14 @@ VALUES
 ('A-Hall Nurse', 40000, 4),
 ('B-Hall Nurse', 40000, 4),
 ('C-Hall Nurse', 40000, 4);
+
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
+VALUES
+('Jimmy', 'Neutron', 1, 1),
+('Cindy', 'Vortex', 2, 2),
+('Carl', 'Wheezer', 3, null),
+('Sheen', 'Estevez', 4, null),
+('Libby', 'Folfax', 4, null),
+('Bolbi', 'Stroganofsky', 4, null),
+('Nick', 'Dean', 4, null),
+('Tim', 'Duncan', 4, null);
