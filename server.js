@@ -181,3 +181,7 @@ function updateEmployee(){
         });
     });
 }
+function quit(){
+    connection.end();
+    process.end;
+}
