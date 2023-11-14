@@ -1,8 +1,6 @@
 const inquirer = require('inquirer');
-//const mysql = require('mysql2');
 const connection = require('./config/connection');
-const console = require('console.table');
-//const db = require('.');
+require('console.table');
 
 connection.connect(function(err){
     if (err) throw err;
