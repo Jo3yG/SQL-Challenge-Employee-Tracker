@@ -72,7 +72,7 @@ function viewRoles(){
     });
 }
 function viewEmployees(){
-    let query = 'SELECT * FROM employee';
+    let query = 'SELECT * FROM employees';
     connection.query(query, function(err, res){
         if (err) throw err;
         console.table(res);
