@@ -38,6 +38,8 @@ MYSQL
     * `role_id`: `INT` to hold reference to employee role
 
     * `manager_id`: `INT` to hold reference to another employee that is the manager of the current employee (`null` if the employee has no manager)
+## GITHUB
+https://github.com/Jo3yG/SQL-Challenge-Employee-Tracker.git
 ## License
 MIT License
 
